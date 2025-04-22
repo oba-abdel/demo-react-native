@@ -1,20 +1,38 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 
+
+
+
+import About from './about';
+import Contact from './contact';
+import Home from './home';
+import UserProfil from './user-profil';
+import Categories from './categories';
+
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { NavigationContainer } from '@react-navigation/native';
+import React from 'react';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+// import { createDrawerNavigator } from "@react-navigation/drawer";
+import InputSearch from './components/input-search';
+import Panier from './panier';
 export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.tsx to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+  const Stack=createNativeStackNavigator();
+  const Tab = createBottomTabNavigator();
+  // const Drawer = createDrawerNavigator();
+  return ( 
+    <NavigationContainer>
+ 
+    <Tab.Navigator initialRouteName='Home'>
+    
+      <Tab.Screen name="Home" component={Home} />
+
+      <Tab.Screen name="Panier" component={Panier} />
+      <Tab.Screen name="Compte" component={UserProfil} />
+      <Tab.Screen name="Categories" component={Categories} />
+      <Tab.Screen name="Contact" component={Contact} />
+    </Tab.Navigator>
+    </NavigationContainer>
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+
