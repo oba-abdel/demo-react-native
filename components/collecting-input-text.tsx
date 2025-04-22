@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { View, Text } from "react-native";
-import styles from "../styles";
+import styles from "../style";
 import InputText from "./input-text";
 
 export default function CollectingInputTextText() {

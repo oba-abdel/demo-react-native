@@ -25,11 +25,10 @@ export default function App() {
     <Tab.Navigator initialRouteName='Home'>
     
       <Tab.Screen name="Home" component={Home} />
-
       <Tab.Screen name="Panier" component={Panier} />
       <Tab.Screen name="Compte" component={UserProfil} />
       <Tab.Screen name="Categories" component={Categories} />
-      <Tab.Screen name="Contact" component={Contact} />
+     
     </Tab.Navigator>
     </NavigationContainer>
   );
